@@ -41,4 +41,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Relationship read it from user models first
+    public function project()
+    {
+        return $this->hasMany(Project::class);
+        
+    }
+
+    public function item()
+    {
+        return $this->hasMany(Item::class);
+        
+    }
+
+
 }

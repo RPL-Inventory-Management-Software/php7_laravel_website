@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,38 +14,43 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', function () {
+Route::get('/', function () {
+    return view('home',[
+        'title' => 'HomePage'
+    ]);
+});
+
+Route::get('/projects', [ProjectController::class, 'index']);
+
+Route::get('/items', [ItemController::class, 'index']);
+
+
+
+// ### ========== Testing Static Views ============ ###
+Route::get('/static-login', function () {
     return view('login');
 });
-
-
-Route::get('/inventory-list', function () {
+Route::get('/static-inventory-list', function () {
     return view('inventory_list');
 });
-
-Route::get('/inventory-equipment', function () {
+Route::get('/static-inventory-equipment', function () {
     return view('inventory_equipment');
 });
-
-Route::get('/inventory-software', function () {
+Route::get('/static-inventory-software', function () {
     return view('inventory_software');
 });
-
-Route::get('/input-equipment', function () {
+Route::get('/static-input-equipment', function () {
     return view('input_equipment');
 });
-
-Route::get('/input-project', function () {
+Route::get('/static-input-project', function () {
     return view('input_project');
 });
-
-
-
-Route::get('/navbar', function () {
+Route::get('/static-navbar', function () {
     return view('partials/navbar');
 });
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
