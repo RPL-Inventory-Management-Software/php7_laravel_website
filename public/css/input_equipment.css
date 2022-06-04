@@ -1,0 +1,14 @@
+h1{
+    color: #E56524;
+    text-align: center;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #e56424;
+    border-color: #E56524;
+    
+}
+

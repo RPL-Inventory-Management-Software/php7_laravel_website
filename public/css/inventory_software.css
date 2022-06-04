@@ -1,0 +1,27 @@
+.center{
+    text-align: center;
+}
+.item-description-container{
+    margin-right: 25%;
+}
+.item-photo{
+    width: 400px;
+    height: 400px;
+    border-radius: 4%;
+}
+
+.profile-picture{
+    width: 40px;
+    height: 40px;
+}
+
+.item-description{
+    padding-left: 1%;
+    padding-top: 4%;
+}
+
+.function-button{
+    margin-top: 5%;
+    margin-left: 50%;
+    color: white;
+}
