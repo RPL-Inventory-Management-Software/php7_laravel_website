@@ -14,4 +14,12 @@ class ProjectController extends Controller
             'projects' => Project::all()
         ]);
     }
+
+    public function show(Project $project)
+    {
+        return view ('inventory_software', [
+            "title" => "Single Project",
+            "project" => $project
+        ]);
+    }
 }

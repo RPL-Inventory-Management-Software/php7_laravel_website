@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\User;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,8 +23,19 @@ Route::get('/', function () {
 });
 
 Route::get('/projects', [ProjectController::class, 'index']);
+Route::get('/projects/{project:slug}', [ProjectController::class, 'show']);
+
 
 Route::get('/items', [ItemController::class, 'index']);
+Route::get('/items/{item:slug}', [ItemController::class, 'show']);
+
+Route::get('/profile/{user:name}', function(User $user){
+    return view ('profile',[
+        'title' => $user->name,
+        'projects' => $user->project->load('user'),
+        'items'=> $user->item->load('user')
+    ]);
+});
 
 
 

@@ -16,29 +16,29 @@
 
     @include('partials.navbar')
 
-    <div class="container">
+    <div class="container mt-4">
 
         <div class="row">
             <div class="col-lg-6 col-md-12 center">
-                <img src="{{ asset('img/item.jpg') }}" class="item-photo">
+                <img src="https://source.unsplash.com/500x500?{{ $project->name }}" class="item-photo">
             </div>
 
             <div class="col-lg-6 col-md-12">
                 <div class="item-description-container">
-                    <h1>Project Name</h1>
+                    <h1>{{ $project->name }}</h1>
                     <div class="d-flex flex-row bd-highlight ">
                         <div class="p-2 bd-highlight"><img class="profile-picture" src="{{ asset('img/dummy-profile.png') }}"></div>
-                        <div class="p-2 bd-highlight"><h5>Creator Name</h5></div>
+                        <div class="p-2 bd-highlight"><h5><a href="/profile/{{ $project->user->name }}" class="text-decoration-none">{{ $project->user->name }}</a></h5></div>
                     </div>
                     <div class="d-flex flex-row bd-highlight ">
                         <div class="p-2 bd-highlight">Date : </div>
-                        <div class="p-2 bd-highlight">DD/MM/YYYY</div>
+                        <div class="p-2 bd-highlight">{{ $project->created_at->diffForHumans() }}</div>
                     </div>
                     <div class="d-flex flex-row bd-highlight mb-3">
                         <div class="p-2 bd-highlight">Type : </div>
                         <div class="p-2 bd-highlight"><span class="badge bg-warning text-dark">Project Type</span></div>
                     </div>
-                    <p class="item-description">You can spend millions of dollars on product development, but if the end-user just "doesn't get it" -- you're toast. And there's where UX (short for user experience) comes in.</p>
+                    <p class="item-description">{{ $project->description }}</p>
 
                     <div class="d-grid gap-2">
                         <button type="button" class="btn btn-warning function-button">DOWNLOAD / WEB LINK</button>

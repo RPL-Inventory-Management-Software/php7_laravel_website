@@ -14,4 +14,12 @@ class ItemController extends Controller
             'items' => Item::all()
         ]);
     }
+
+    public function show(Item $item)
+    {
+        return view ('inventory_equipment', [
+            "title" => "Single Item",
+            "item" => $item
+        ]);
+    }
 }

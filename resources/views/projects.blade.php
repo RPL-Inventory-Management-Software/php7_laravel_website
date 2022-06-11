@@ -11,27 +11,16 @@
 
     <div class="col">
       <div class="card">
-        <img src="https://accurate.id/wp-content/uploads/2020/11/inventory-adalah-1.jpg" class="card-img-top" alt="inventory-name">
+        <img src="https://source.unsplash.com/1200x400?{{ $project->name }}" class="card-img-top" alt="inventory-name">
         <div class="card-body">
           <h5 class="card-title">{{ $project->name }}</h5>
-          <p class="card-text">Created By: {{ $project->user->name }}</p>
-          <a class="fa-solid fa-arrow-right arrow-icon" href="#"></a>
+          <p class="card-text">Created By: <a href="/profile/{{ $project->user->name }}" class="text-decoration-none">{{ $project->user->name }}</a> </p>
+          <a class="fa-solid fa-arrow-right arrow-icon" href="/projects/{{ $project->slug }}">Details</a>
         </div>
       </div>
     </div>
 
     @endforeach
-
-    {{-- <div class="col">
-      <div class="card">
-        <img src="https://accurate.id/wp-content/uploads/2020/11/inventory-adalah-1.jpg" class="card-img-top" alt="inventory-name">
-        <div class="card-body">
-          <h5 class="card-title">Inventory Name</h5>
-          <p class="card-text">Created by</p>
-          <a class="fa-solid fa-arrow-right arrow-icon" href="#"></a>
-        </div>
-      </div>
-    </div> --}}
 
   </div>
 

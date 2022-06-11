@@ -37,76 +37,76 @@ class DatabaseSeeder extends Seeder
 
 
         Project::create([
-            'name' => 'project1',
-            'slug' => 'project-1',
+            'name' => 'Administrative',
+            'slug' => 'administrative',
             'description' => 'project1 description',
             'user_id' => 1
         ]);
         Project::create([
-            'name' => 'project2',
-            'slug' => 'project-2',
+            'name' => 'Construction',
+            'slug' => 'construction',
             'description' => 'project2 description',
             'user_id' => 1
         ]);
         Project::create([
-            'name' => 'project3',
-            'slug' => 'project-3',
+            'name' => 'Computer Software Development',
+            'slug' => 'computer-software-development',
             'description' => 'project3 description',
             'user_id' => 2
         ]);
         Project::create([
-            'name' => 'project4',
-            'slug' => 'project-4',
+            'name' => 'Design of Plans',
+            'slug' => 'design-of-plans',
             'description' => 'project4 description',
             'user_id' => 2
         ]);
         Project::create([
-            'name' => 'project5',
-            'slug' => 'project-5',
+            'name' => 'Research',
+            'slug' => 'research',
             'description' => 'project5 description',
             'user_id' => 3
         ]);
         Project::create([
-            'name' => 'project6',
-            'slug' => 'project-6',
+            'name' => 'Construction',
+            'slug' => 'construction_2',
             'description' => 'project6 description',
             'user_id' => 3
         ]);
 
 
         Item::create([
-            'name' => 'item1',
-            'slug' => 'item-1',
+            'name' => 'Motherboard',
+            'slug' => 'motherboard',
             'description' => 'item1 description',
             'user_id' => 1
         ]);
         Item::create([
-            'name' => 'item2',
-            'slug' => 'item-2',
+            'name' => 'Central Processing Unit',
+            'slug' => 'central-processing-unit',
             'description' => 'item2 description',
             'user_id' => 1
         ]);
         Item::create([
-            'name' => 'item3',
-            'slug' => 'item-3',
+            'name' => 'Projector',
+            'slug' => 'projector',
             'description' => 'item3 description',
             'user_id' => 2
         ]);
         Item::create([
-            'name' => 'item4',
-            'slug' => 'item-4',
+            'name' => 'Scanners',
+            'slug' => 'scanners',
             'description' => 'item4 description',
             'user_id' => 2
         ]);
         Item::create([
-            'name' => 'item5',
-            'slug' => 'item-5',
+            'name' => 'Printers ',
+            'slug' => 'printers ',
             'description' => 'item5 description',
             'user_id' => 3
         ]);
         Item::create([
-            'name' => 'item6',
-            'slug' => 'item-6',
+            'name' => 'Graphical Processing Unit',
+            'slug' => 'graphical-processing-unit',
             'description' => 'item6 description',
             'user_id' => 3
         ]);

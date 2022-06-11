@@ -15,6 +15,7 @@ class Project extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+        //1 projects only belongs to 1 user
     }
 
 }

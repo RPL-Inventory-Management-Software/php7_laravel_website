@@ -15,6 +15,7 @@ class Item extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+        // 1 Item only belongs to 1 user
     }
 
 
