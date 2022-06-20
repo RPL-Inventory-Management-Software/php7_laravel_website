@@ -9,9 +9,16 @@ class ItemController extends Controller
 {
     public function index()
     {
+        $items = Item::latest();
+        // dd(request('search'));
+        if(request('search')) {
+            $items->where('name', 'like', '%' . request('search') . '%');
+        }
+
         return view('items',[
             'title' => 'All Item',
-            'items' => Item::all()
+            'items' => $items->get()
+            //'items' => Item::latest()->get()
         ]);
     }
 

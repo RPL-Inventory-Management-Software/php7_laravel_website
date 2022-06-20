@@ -2,6 +2,17 @@
 
 @section('container')
 
+<div class="row justify-content-center mb-3">
+  <div class="col-md-6">
+      <form action="/items">
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Search.." name="search" value="{{ request('search') }}">
+              <button class="btn btn-danger" type="submit">Search</button>
+            </div>
+      </form>
+  </div>
+</div>
+
   <h1>All Items</h1>
 
 

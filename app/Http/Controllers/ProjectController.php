@@ -9,9 +9,16 @@ class ProjectController extends Controller
 {
     public function index()
     {
+        $projects = Project::latest();
+        // dd(request('search'));
+        if(request('search')) {
+            $projects->where('name', 'like', '%' . request('search') . '%');
+        }
+
         return view('projects',[
             'title' => 'All Project',
-            'projects' => Project::all()
+            'projects' => $projects->get()
+            //'projects' => Project::latest()->get()
         ]);
     }
 
