@@ -1,9 +1,11 @@
 <?php
 
 use App\Models\User;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home',[
-        'title' => 'HomePage'
+        'title' => 'HomePage',
+        'active' => 'home'
     ]);
 });
 
@@ -32,10 +35,24 @@ Route::get('/items/{item:slug}', [ItemController::class, 'show']);
 Route::get('/profile/{user:name}', function(User $user){
     return view ('profile',[
         'title' => $user->name,
+        'active' => 'user',
         'projects' => $user->project->load('user'),
         'items'=> $user->item->load('user')
     ]);
 });
+
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
+
+
+
+
+
+
 
 
 

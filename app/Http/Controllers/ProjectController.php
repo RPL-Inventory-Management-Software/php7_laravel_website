@@ -17,6 +17,7 @@ class ProjectController extends Controller
 
         return view('projects',[
             'title' => 'All Project',
+            'active' => 'project',
             'projects' => $projects->get()
             //'projects' => Project::latest()->get()
         ]);
@@ -26,6 +27,7 @@ class ProjectController extends Controller
     {
         return view ('inventory_software', [
             "title" => "Single Project",
+            'active' => 'project',
             "project" => $project
         ]);
     }

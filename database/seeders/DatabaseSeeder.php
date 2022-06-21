@@ -19,22 +19,23 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        User::create([
-            'name' => 'Andi Achmad Adjie',
-            'email' => 'andiachmadl@student.telkomuniversity.ac.id',
-            'password' => bcrypt('12345')
-        ]);
-        User::create([
-            'name' => 'Meizan Arthur Alfianto',
-            'email' => 'meizanarthut@student.telkomuniversity.ac.id',
-            'password' => bcrypt('12345')
-        ]);
-        User::create([
-            'name' => 'Naufal Pandityatama',
-            'email' => 'axelnaufal@student.telkomuniversity.ac.id',
-            'password' => bcrypt('12345')
-        ]);
+        // User::create([
+        //     'name' => 'Andi Achmad Adjie',
+        //     'email' => 'andiachmadl@student.telkomuniversity.ac.id',
+        //     'password' => bcrypt('12345')
+        // ]);
+        // User::create([
+        //     'name' => 'Meizan Arthur Alfianto',
+        //     'email' => 'meizanarthut@student.telkomuniversity.ac.id',
+        //     'password' => bcrypt('12345')
+        // ]);
+        // User::create([
+        //     'name' => 'Naufal Pandityatama',
+        //     'email' => 'axelnaufal@student.telkomuniversity.ac.id',
+        //     'password' => bcrypt('12345')
+        // ]);
 
+        User::factory(3)->create();
 
         Project::create([
             'name' => 'Administrative',

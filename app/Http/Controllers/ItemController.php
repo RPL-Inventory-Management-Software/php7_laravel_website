@@ -17,6 +17,7 @@ class ItemController extends Controller
 
         return view('items',[
             'title' => 'All Item',
+            'active' => 'item',
             'items' => $items->get()
             //'items' => Item::latest()->get()
         ]);
@@ -26,6 +27,7 @@ class ItemController extends Controller
     {
         return view ('inventory_equipment', [
             "title" => "Single Item",
+            'active' => 'item',
             "item" => $item
         ]);
     }

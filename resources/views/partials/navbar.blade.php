@@ -10,15 +10,35 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/items">Inventory</a>
+                <a class="nav-link {{ ($active === "item") ? 'active' : ''}}" aria-current="page" href="/items">Inventory</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/projects">Project</a>
+                <a class="nav-link {{ ($active === "project") ? 'active' : ''}}" aria-current="page" href="/projects">Project</a>
             </li>
         </ul>
-        <div class="d-flex">
-            <a class="nav-link message-text" href="#" style="color: white;">Message</a>
-            <img class="profile-picture" src="{{ asset('img/dummy-profile.png') }}">
-        </div>
+        
+        <ul class="navbar-nav ms-auto">
+            @auth
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome back, {{ auth()->user()->name }}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window-reverse"></i> My Dashboard</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
+                  </form>
+                </li>
+              </ul>
+            </li>
+            @else
+            <li class="nav-item">
+              <a href="/login" class="nav-link" {{ ($active === "login") ? 'active' : ''}}> <i class="bi bi-box-arrow-in-right"></i> Login </a>
+            </li>
+            @endauth
+          </ul>
     </div>
 </nav>
