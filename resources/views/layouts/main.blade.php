@@ -11,8 +11,12 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3040aa43c5.js" crossorigin="anonymous"></script>
+
     <!-- My Style -->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css\home-page.css">
 
     
     <title>RPL Web | {{ $title }}</title>

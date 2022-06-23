@@ -6,6 +6,8 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardItemController;
+use App\Http\Controllers\DashboardProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,16 +43,19 @@ Route::get('/profile/{user:name}', function(User $user){
     ]);
 });
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest'); 
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
+Route::get('/dashboard', function(){
+    return view('dashboard.index');
+})->middleware('auth');    // only logged in user can access
 
-
-
+Route::resource('dashboard/items', DashboardItemController::class)->middleware('auth');
+Route::resource('dashboard/projects', DashboardProjectController::class)->middleware('auth');
 
 
 

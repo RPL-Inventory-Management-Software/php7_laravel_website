@@ -18,5 +18,8 @@ class Item extends Model
         // 1 Item only belongs to 1 user
     }
 
-
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

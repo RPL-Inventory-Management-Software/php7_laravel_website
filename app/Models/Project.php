@@ -18,4 +18,9 @@ class Project extends Model
         //1 projects only belongs to 1 user
     }
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 }
