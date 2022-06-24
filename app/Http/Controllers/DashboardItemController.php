@@ -26,7 +26,9 @@ class DashboardItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.items.create',[
+            
+        ]);
     }
 
     /**
@@ -37,7 +39,17 @@ class DashboardItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return ($request);
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:posts',
+            'description' => 'required'
+        ]);
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Item::create($validatedData);
+
+        return redirect('/');
     }
 
     /**

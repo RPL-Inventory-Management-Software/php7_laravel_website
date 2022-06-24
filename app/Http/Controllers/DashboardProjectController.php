@@ -26,7 +26,9 @@ class DashboardProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.projets.create',[
+
+        ]);
     }
 
     /**
