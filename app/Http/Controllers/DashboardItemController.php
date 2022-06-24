@@ -27,7 +27,7 @@ class DashboardItemController extends Controller
     public function create()
     {
         return view('dashboard.items.create',[
-            
+            'items' => Item::all()
         ]);
     }
 
@@ -42,7 +42,7 @@ class DashboardItemController extends Controller
         // return ($request);
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'slug' => 'required|unique:posts',
+            'slug' => 'required|unique:items',
             'description' => 'required'
         ]);
         $validatedData['user_id'] = auth()->user()->id;
