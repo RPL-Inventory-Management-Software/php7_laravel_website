@@ -27,7 +27,7 @@ class DashboardItemController extends Controller
     public function create()
     {
         return view('dashboard.items.create',[
-            'items' => Item::all()
+
         ]);
     }
 

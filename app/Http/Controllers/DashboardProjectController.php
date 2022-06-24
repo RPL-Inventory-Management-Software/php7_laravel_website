@@ -26,7 +26,7 @@ class DashboardProjectController extends Controller
      */
     public function create()
     {
-        return view('dashboard.projets.create',[
+        return view('dashboard.projects.create',[
 
         ]);
     }
@@ -39,7 +39,16 @@ class DashboardProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:projects',
+            'description' => 'required'
+        ]);
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Project::create($validatedData);
+
+        return redirect('/');
     }
 
     /**
