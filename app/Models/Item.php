@@ -9,8 +9,6 @@ class Item extends Model
 {
     use HasFactory;
 
-    protected $table = 'items';
-
     protected $guarded = ['id'];
 
     //Relationship , read it from items models first
