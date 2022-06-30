@@ -18,6 +18,9 @@ class CreateProjectsTable extends Migration
             $table->foreignId('user_id');
             $table->string('name');
             $table->string('slug')->unique();
+            $table->string('type');
+            $table->binary('file');
+            // $table->binary('picture');
             $table->text('description');
             $table->timestamps();
         });

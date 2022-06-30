@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/inventory_software.css') }}">
 
-    <title>Hello, world!</title>
+    <title>{{ $project->name }}</title>
   </head>
   <body>
 
@@ -36,7 +36,7 @@
                     </div>
                     <div class="d-flex flex-row bd-highlight mb-3">
                         <div class="p-2 bd-highlight">Type : </div>
-                        <div class="p-2 bd-highlight"><span class="badge bg-warning text-dark">Project Type</span></div>
+                        <div class="p-2 bd-highlight"><span class="badge bg-warning text-dark">{{ $project->type }}</span></div>
                     </div>
                     <p class="item-description">{{ $project->description }}</p>
 

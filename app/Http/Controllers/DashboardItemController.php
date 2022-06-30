@@ -43,6 +43,10 @@ class DashboardItemController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required|unique:items',
+            'brand' => 'required|max:255',
+            'quantity' => 'required|max:20',
+            // 'date' => 'required',
+            'type' => 'required|max:255',
             'description' => 'required'
         ]);
         $validatedData['user_id'] = auth()->user()->id;

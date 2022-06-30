@@ -1,14 +1,40 @@
-h1{
-    color: #E56524;
-    text-align: center;
-}
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:visited,
-.btn-primary:focus {
-    background-color: #e56424;
-    border-color: #E56524;
-    
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+    color: #E56424;
+    font-weight: 700;
+    font-size: 64px;
+    margin: 200px auto 100px;
+    text-align: center;
+}
+
+.row {
+    text-align: center;
+}
+
+.col-form-label {
+    color: #F2B164;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: left;
+}
+
+.form-control {
+    background: #C3CBCD;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    margin: auto;
+}
+
+.btn {
+    background: #F2B164;
+    color: white;
+    width: 150px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 3px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    margin-top: 50px;
+    margin-left: 1145px;
+    margin-bottom: 100px;
+}

@@ -2,7 +2,6 @@
 
 @section('container')
 <section id="corousel">
-    <img src="assets\robot_prev_ui.png" class="img-fluid robot-img" alt="...">
     <div id="carouselExampleCaptions" class="carousel slide corosel-suggested" data-bs-ride="carousel" data-bs-interval="2000" data-bs-pause="hover">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -52,7 +51,7 @@
           <a class="btn btn-colored" href="/projects" role="button"><i class="fa-solid fa-boxes-stacked fa-4x mx-auto position-absolute top-50 start-50 translate-middle"></i></a>
         </div>
         <div class="btn-icon-caption">
-          <span class="icon-caption">Inventory List Page</span>
+          <span class="icon-caption">Project List Page</span>
         </div>
       </div>
       <div class="item text-center mx-5 my-3">

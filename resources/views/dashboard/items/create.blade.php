@@ -8,34 +8,58 @@
 <div class="col-lg-8">
     <form method="post" action="/dashboard/items">
       @csrf
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required autofocus>
-          @error('title')
-            <div class="invalid-feedback">
-              {{ $message }}
-            </div>
-          @enderror
-        </div>
-        <div class="mb-3">
-            <label for="slug" class="form-label">Slug</label>
-            <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required autofocus>
-            @error('slug')
-            <div class="invalid-feedback">
-              {{ $message }}
-            </div>
-          @enderror
-        </div>
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <input type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description" required autofocus>
-            @error('description')
-              <div class="invalid-feedback">
-                {{ $message }}
-              </div>
-            @enderror
+    <br>
+    <div class="container">
+        <div class="row mb-3">
+          <label for="inputItemName" class="col-sm-2 col-form-label">Item Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputItemName" placeholder="Input the item name" name="name" required>
           </div>
-        <button type="submit" class="btn btn-primary">Submit Item</button>
+        </div>
+        <div class="row mb-3">
+          <label for="inputSlugName" class="col-sm-2 col-form-label">Slug</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputSlugName" placeholder="Input the slug" name="slug" required>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputBrand" class="col-sm-2 col-form-label">Brand</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputBrand" placeholder="Input the project creator" name="brand" required>
+          </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputQuantity" class="col-sm-2 col-form-label">Quantity</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="inputQuantity" placeholder="Input the number of the item" min="1" name="quantity" required>
+            </div>
+          </div>
+        <div class="row mb-3">
+          <label for="inputType" class="col-sm-2 col-form-label">Item Type</label>
+          <div class="col-sm-10">
+            <select class="form-select" aria-label="Default select example" name="type" required>
+              <option selected>Choose the type of the item</option>
+              <option value="equipment">Equipment</option>
+              <option value="furniture">Furniture</option>
+            </select>
+          </div>
+        </div>
+        <!-- <div class="row mb-3">
+          <label for="formFile" class="col-sm-2 col-form-label">Item Picture</label>
+          <div class="col-sm-10">
+            <input class="form-control" id="formFile" type="file" accept="image/*" name="image">
+          </div>
+        </div> -->
+        <div class="row mb-3">
+          <label for="inputDesc" class="col-sm-2 col-form-label">Description</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" id="inputDesc" placeholder="Describe about the item/product" rows="5" name="description" required></textarea>
+          </div>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary me-md-2" type="submit">Submit</button>
+        </div>
+    </div>
     </form>
 </div>
 

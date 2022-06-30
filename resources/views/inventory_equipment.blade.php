@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="{{asset ('css/inventory_equipment.css')}}">
 
-    <title>Hello, world!</title>
+    <title>{{ $item->name }}</title>
   </head>
   <body>
       
@@ -32,19 +32,19 @@
                     </div>
                     <div class="d-flex flex-row bd-highlight ">
                         <div class="p-2 bd-highlight">Date : </div>
-                        <div class="p-2 bd-highlight">DD/MM/YYYY</div>
+                        <div class="p-2 bd-highlight">{{ $item->created_at->diffForHumans() }}</div>
                     </div>
                     <div class="d-flex flex-row bd-highlight ">
                         <div class="p-2 bd-highlight">Type : </div>
-                        <div class="p-2 bd-highlight"><span class="badge bg-warning text-dark">Project Type</span></div>
+                        <div class="p-2 bd-highlight"><span class="badge bg-warning text-dark">{{ $item->type }}</span></div>
                     </div>
                     <div class="d-flex flex-row bd-highlight ">
                         <div class="p-2 bd-highlight">Brand : </div>
-                        <div class="p-2 bd-highlight">Brand Type</div>
+                        <div class="p-2 bd-highlight">{{ $item->brand }}</div>
                     </div>
                     <div class="d-flex flex-row bd-highlight ">
                         <div class="p-2 bd-highlight">Quantity : </div>
-                        <div class="p-2 bd-highlight">10</div>
+                        <div class="p-2 bd-highlight">{{ $item->quantity }}</div>
                     </div>
                     <p class="item-description">{{ $item->description }}</p>
 

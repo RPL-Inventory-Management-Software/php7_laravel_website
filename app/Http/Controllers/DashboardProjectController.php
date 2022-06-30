@@ -26,8 +26,8 @@ class DashboardProjectController extends Controller
      */
     public function create()
     {
-        return view('dashboard.projets.create',[
-
+        return view('dashboard.projects.create',[
+            'projects' => Project::all()
         ]);
     }
 
@@ -39,7 +39,20 @@ class DashboardProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return ($request);
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'slug' => 'required|unique:items',
+            'type' => 'required|max:255',
+            'file' => 'required',
+            // 'picture' => 'required',
+            'description' => 'required'
+        ]);
+        $validatedData['user_id'] = auth()->user()->id;
+
+        Project::create($validatedData);
+
+        return redirect('/');
     }
 
     /**

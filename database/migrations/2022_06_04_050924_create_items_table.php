@@ -18,6 +18,10 @@ class CreateItemsTable extends Migration
             $table->foreignId('user_id');
             $table->string('name');
             $table->string('slug')->unique();
+            $table->string('brand');
+            $table->integer('quantity');
+            $table->string('type');
+            // $table->binary('image');
             $table->text('description');
             $table->timestamps();
         });
